@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @bar.name %>
+</p>
+
+<p>
+  <strong>Street:</strong>
+  <%= @bar.street %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @bar.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @bar.state %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @bar.zip %>
+</p>
+
+<%= link_to 'Edit', edit_bar_path(@bar) %> |
+<%= link_to 'Back', bars_path %>
