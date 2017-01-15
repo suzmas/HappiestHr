@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app will be similar to Yelp- but for finding Happy Hours.
 
-Things you may want to cover:
+I'll be using:
 
-* Ruby version
+* Ruby version 2.4.0
 
-* System dependencies
+* Rails version 5.0.1
 
-* Configuration
+* Geocoder & Gmaps to locate happy hours near user designated locations
 
-* Database creation
+* Devise & Omniauth for authentication
 
-* Database initialization
+* Cancancan & Rolify for authorization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Happy Hour search using textacular
