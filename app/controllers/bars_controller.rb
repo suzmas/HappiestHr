@@ -5,11 +5,37 @@ class BarsController < ApplicationController
   # GET /bars.json
   def index
     @bars = Bar.all
+    if params[:search]
+      @bars = Bar.search(params[:search])
+    end
   end
 
   # GET /bars/1
   # GET /bars/1.json
   def show
+  end
+
+  def map_location
+    @bar = Bar.find(params[:bar_id])
+    @hash = Gmaps4rails.build_markers(@bar) do |bar, marker|
+      marker.lat(bar.latitude)
+      marker.lng(bar.longitude)
+      marker.infowindow("<em>" + bar.address + "</em>")
+    end
+    render json: @hash.to_json
+  end
+
+  def map_locations
+    @bars = Bar.all
+    if params[:search]
+      @bars = Bar.search(params[:search])
+    end
+
+    @hash = Gmaps4rails.build_markers(@bars) do |bar,marker|
+      marker.lat(bar.latitude)
+      marker.lng(bar.longitude)
+    end
+    render json: @hash.to_json
   end
 
   # GET /bars/new
