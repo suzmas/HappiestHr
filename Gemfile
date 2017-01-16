@@ -40,11 +40,15 @@ gem 'geocoder'
 gem 'gmaps4rails'
 gem 'paperclip'
 gem 'textacular'
+
+# Authorization and Auth gems w/ Devise, Cancan, rolify, Omniauth
 gem 'devise'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'cancancan'
 gem 'rolify'
+
+
 gem 'aws-sdk', '~> 2.3'
 
 group :test do
