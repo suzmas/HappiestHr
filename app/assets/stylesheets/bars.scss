@@ -2,12 +2,42 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#bar_map {
-  height: 400px;
-  width: 500px;
+
+
+  // -webkit-filter: blur(4px);
+
+.bg-overlay {
+    background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url("http://static.wixstatic.com/media/ad25f9_d33d06fd748d4504b2d4852e86181709.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    color: #fff;
+    height: 450px;
+    padding-top: 5em;
+    min-width: 100vw;
+    -webkit-filter: blur(.5px);
+}
+.bg-overlay h1 {
 }
 
-#bars_map {
-  height: 400px;
-  width: 500px;
+
+.map {
+  width: 45%;
+  min-width: 55em;
+  height: 95%;
+  min-height: 30em;
+  border-radius: .5em;
 }
+
+.map:first-child {
+  border: 1px solid black;
+}
+// #bar_map {
+//   height: 400px;
+//   width: 500px;
+// }
+//
+// #bars_map {
+//   height: 400px;
+//   width: 500px;
+// }

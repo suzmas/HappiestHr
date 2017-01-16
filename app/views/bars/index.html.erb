@@ -1,8 +1,13 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p> -->
 
-<div class="page-header">
-  <h1>Bars</h1>
+<div class="container bg-overlay">
+  <div class="row text-center">
+    <h1 class="text-center">five after five</h1>
+    <h4>Happy Hours. <br> Go there, eat stuff, drink things. Repeat.</h4>
+  </div>
 </div>
+
+
 
 <div class="row">
   <div class="col-md-1">
@@ -34,11 +39,14 @@
       <% end %>
     </tbody>
   </table>
+  <%= link_to 'New Bar', new_bar_path %>
+
 </div>
 </div>
 
 <br>
 
-<%= link_to 'New Bar', new_bar_path %>
-
-<div id="bars_map" data-bars-id="<%=@bars%>"></div>
+<div class="row">
+  <div class="col-md-1 center-block map" id="bars_map" data-bars-id="<%=@bars%>">
+  </div>
+</div>
