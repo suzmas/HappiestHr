@@ -1,66 +1,53 @@
-<!-- Header Section Start -->
-<div class="header">
-  <nav class="navbar navbar-default main-navigation" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
-        <!-- Stat Toggle Nav Link For Mobiles -->
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <!-- End Toggle Nav Link For Mobiles -->
-        <a class="navbar-brand logo" href="index.html"><%= image_tag "img/logo.png" %></a>
-      </div>
-      <!-- brand and toggle menu for mobile End -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Brand</a>
+    </div>
 
-      <!-- Navbar Start -->
-      <div class="collapse navbar-collapse" id="navbar">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="login.html"><i class="lnr lnr-enter"></i> Login</a></li>
-          <li><a href="signup.html"><i class="lnr lnr-user"></i> Signup</a></li>
-          <li class="postadd">
-            <a class="btn btn-danger btn-post" href="post-ads.html"><span class="fa fa-plus-circle"></span> Post an Ad</a>
-          </li>
-        </ul>
-      </div>
-      <!-- Navbar End -->
-    </div>
-  </nav>
-  <!-- Off Canvas Navigation -->
-  <div class="navmenu navmenu-default navmenu-fixed-left offcanvas">
-  <!--- Off Canvas Side Menu -->
-    <div class="close" data-toggle="offcanvas" data-target=".navmenu">
-        <i class="fa fa-close"></i>
-    </div>
-      <h3 class="title-menu">All Pages</h3>
-      <ul class="nav navmenu-nav"> <!--- Menu -->
-        <li><a href="index.html">Home</a></li>
-        <li><a href="index-v-2.html">Home Page V2</a></li>
-        <li><a href="about.html">About us</a></li>
-        <li><a href="category.html">Category</a></li>
-        <li><a href="ads-details.html">Ads details</a></li>
-        <li><a href="pricing.html">Pricing Tables</a></li>
-        <li><a href="account-archived-ads.html">Account archived</a></li>
-        <li><a href="account-close.html">Account-close</a></li>
-        <li><a href="account-favourite-ads.html">Favourite ads</a></li>
-        <li><a href="account-home.html">Account home</a></li>
-        <li><a href="account-myads.html">Account myads</a></li>
-        <li><a href="account-pending-approval-ads.html">pending approval</a></li>
-        <li><a href="account-saved-search.html">saved search</a></li>
-        <li><a href="post-ads.html">Post ads</a></li>
-        <li><a href="posting-success.html">Posting-success</a></li>
-        <li><a href="blog.html">Blogs</a></li>
-        <li><a href="blog-details.html">Blog Details</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="forgot-password.html">Forgot-password</a></li>
-        <li><a href="faq.html">Faq</a></li>
-        <li><a href="signup.html">Signup</a></li>
-    </ul><!--- End Menu -->
-  </div> <!--- End Off Canvas Side Menu -->
-  <div class="tbtn wow pulse" id="menu" data-wow-iteration="infinite" data-wow-duration="500ms" data-toggle="offcanvas" data-target=".navmenu">
-    <p><i class="fa fa-file-text-o"></i> All Pages</p>
-  </div>
-</div>
-<!-- Header Section End -->
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
