@@ -1,5 +1,8 @@
 class BarsController < ApplicationController
   before_action :set_bar, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:create, :edit, :update, :destroy]
+
+  skip_authorize_resource only: [:map_location, :map_locations]
 
   # GET /bars
   # GET /bars.json

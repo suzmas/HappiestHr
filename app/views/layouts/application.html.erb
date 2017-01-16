@@ -22,8 +22,11 @@
   </head>
 
   <body>
-      <%= render "navbar" %>
+      <%= render partial: "layouts/navbar" %>
 
       <%= yield %>
+      <p id="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+
   </body>
 </html>
