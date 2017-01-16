@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  get 'admin' => 'admin#index'
+  put 'admin/:id' => 'admin#update'
+  patch 'admin/:id' => 'admin#update'
+
+  devise_for :users, :controllers => { :omniauth_callbacks => 'users/omniauth_callbacks' }
 
   resources :bars do
     get 'map_location'

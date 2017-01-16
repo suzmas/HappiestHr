@@ -31,14 +31,18 @@
           <td><%= bar.city %></td>
           <td><%= bar.state %></td>
           <td><%= bar.zip %></td>
-          <td><%= link_to 'Show', bar %></td>
-          <td><%= link_to 'Edit', edit_bar_path(bar) %></td>
-          <td><%= link_to 'Destroy', bar, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+          <td class="table-btn"><%= link_to 'Show', bar, class: 'btn btn-primary btn-sm' %></td>
+
+          <% if bar.user == current_user %>
+            <td class="table-btn btn-"><%= link_to 'Edit', edit_bar_path(bar), class: 'btn btn-primary btn-sm' %></td>
+            <td class="table-btn"><%= link_to 'Destroy', bar, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary btn-sm' %></td>
+          <% end %>
         </tr>
       <% end %>
     </tbody>
   </table>
-  <%= link_to 'New Bar', new_bar_path %>
+  <%= link_to 'New Bar', new_bar_path, class: 'btn btn-primary' %>
 
 </div>
 </div>
