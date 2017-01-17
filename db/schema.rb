@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170116193353) do
+ActiveRecord::Schema.define(version: 20170117073454) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,17 @@ ActiveRecord::Schema.define(version: 20170116193353) do
     t.float    "longitude"
     t.integer  "user_id"
     t.index ["user_id"], name: "index_bars_on_user_id", using: :btree
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string   "name"
+    t.string   "day"
+    t.time     "start"
+    t.time     "end"
+    t.integer  "bar_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bar_id"], name: "index_events_on_bar_id", using: :btree
   end
 
   create_table "roles", force: :cascade do |t|
@@ -65,4 +76,5 @@ ActiveRecord::Schema.define(version: 20170116193353) do
   end
 
   add_foreign_key "bars", "users"
+  add_foreign_key "events", "bars"
 end

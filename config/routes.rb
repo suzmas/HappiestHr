@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :events
   get 'admin' => 'admin#index'
   put 'admin/:id' => 'admin#update'
   patch 'admin/:id' => 'admin#update'
