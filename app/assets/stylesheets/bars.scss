@@ -1,9 +1,6 @@
 // Place all the styles related to the Bars controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-
-
   // -webkit-filter: blur(4px);
 
 .bg-overlay {
@@ -19,8 +16,9 @@
 }
 .bg-overlay h1 {
 }
-
-
+td {
+  font-size: 15px !important;
+}
 .map {
   width: 90%;
   min-width: 55em;
@@ -32,12 +30,15 @@
 .map:first-child {
   border: 1px solid black;
 }
-// #bar_map {
-//   height: 400px;
-//   width: 500px;
-// }
-//
-// #bars_map {
-//   height: 400px;
-//   width: 500px;
-// }
+
+.clock {
+  display: inline-block !important;
+  max-width: 80% !important;
+  max-height: 80% !important;
+  padding-top: 1em;
+}
+
+.listings {
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
