@@ -26,6 +26,7 @@ function showLocations(dataFromServer) {
 }
 
 function createGmap(dataFromServer) {
+  alert(dataFromServer);
   handler = Gmaps.build('Google');
   handler.buildMap({
     provider: {},
