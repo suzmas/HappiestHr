@@ -1,6 +1,8 @@
 # README
 
-This app will be similar to Yelp- but for finding Happy Hours.
+-- Work In Progress --
+
+This app will be similar to Yelp- but for finding Happy Hours near you. 
 
 I'll be using:
 
