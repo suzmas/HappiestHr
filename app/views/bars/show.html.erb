@@ -1,31 +1,34 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
 
-<p>
-  <strong>Name:</strong>
-  <%= @bar.name %>
+<h2 class="text-center"><%= @bar.name %></h2>
+<p class="text-center">
+  <%= @bar.street %>,   <%= @bar.zip %>
+  <br>
+  <% if @bar.user == current_user %>
+    <%= link_to 'Edit', edit_bar_path(@bar) %> |
+  <% end %>
+  <%= link_to 'Back', bars_path %>
 </p>
+<table class="table table-responsive">
+  <thead>
+    <tr>
+      <th>Day</th>
+      <th>From</th>
+      <th>To</th>
+    </tr>
+  </thead>
 
-<p>
-  <strong>Street:</strong>
-  <%= @bar.street %>
-</p>
+  <tbody>
+    <% @bar.events.each do |event| %>
+      <tr>
+        <td><%= event.day %></td>
+        <td><%= event.start.hour %></td>
+        <td><%= event.end.hour %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
-<p>
-  <strong>City:</strong>
-  <%= @bar.city %>
-</p>
+<div class="map" id="bar_map" data-bar-id="<%=@bar.id%>"></div>
 
-<p>
-  <strong>State:</strong>
-  <%= @bar.state %>
-</p>
-
-<p>
-  <strong>Zip:</strong>
-  <%= @bar.zip %>
-</p>
-
-<%= link_to 'Edit', edit_bar_path(@bar) %> |
-<%= link_to 'Back', bars_path %>
-
-<div id="bar_map" data-bar-id="<%=@bar.id%>"></div>
+</div>

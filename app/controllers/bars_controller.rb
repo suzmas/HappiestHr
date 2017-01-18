@@ -23,7 +23,6 @@ class BarsController < ApplicationController
     @hash = Gmaps4rails.build_markers(@bar) do |bar, marker|
       marker.lat(bar.latitude)
       marker.lng(bar.longitude)
-      marker.infowindow("<b>#{bar_path}</b>")
     end
     render json: @hash.to_json
   end
