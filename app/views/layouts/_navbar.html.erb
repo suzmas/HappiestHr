@@ -9,7 +9,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">HH</a>
+      <a class="navbar-brand" href="/">HH</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -35,9 +35,9 @@
           </ul>
         </li>
       </ul>
-      <%= form_tag(bars_path, method: 'get', id: 'search-form') do %>
-        <%= text_field_tag :search, params[:search], placeholder: "Search" %>
-        <%= submit_tag "Search", name: nil %>
+      <%= form_tag(bars_path, method: 'get', class: 'navbar-form', id: 'search-form') do %>
+        <%= text_field_tag :search, params[:search], class: 'form-control', placeholder: "Search" %>
+        <%= submit_tag "Search", class: 'btn btn-default', name: nil %>
       <% end %>
       <!-- <ul class="nav navbar-nav navbar-right">
         <li><a href="#">Link</a></li>

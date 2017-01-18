@@ -1,5 +1,8 @@
 .navbar {
   border: none;
-  background-color: transparent;
-  background: transparent;
+  background: rgba(107, 45, 45, 0.37);
+  // background: transparent;
+}
+.navbar input {
+  float: right;
 }
