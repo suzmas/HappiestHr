@@ -16,11 +16,20 @@
 }
 .bg-overlay h1 {
 }
+.text-center a {
+  color: black !important;
+}
 table {
-  background: rgba(107, 45, 45, 0.37);
+  border: 1px solid rgba(107, 45, 45, 0.37);
+}
+th {
+  background: rgba(107, 45, 45, 0.1);
 }
 td {
   font-size: 15px !important;
+}
+.table-btn a {
+  color: black !important;
 }
 .map {
   width: 90%;

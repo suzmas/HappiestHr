@@ -32,6 +32,9 @@ class BarsController < ApplicationController
     if params[:search]
       @bars = Bar.search(params[:search])
     end
+    if @bars.length < 1
+      @bars = []
+    end
 
     @hash = Gmaps4rails.build_markers(@bars) do |bar,marker|
       marker.lat(bar.latitude)

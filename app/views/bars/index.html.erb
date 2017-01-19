@@ -35,11 +35,14 @@
               <td><%= bar.state %></td>
               <td><%= bar.zip %></td>
 
-              <td class="table-btn"><%= link_to 'Show', bar, class: 'btn btn-default' %></td>
+              <td class="table-btn"><%= link_to 'View', bar, class: 'btn btn-default' %></td>
 
               <% if bar.user == current_user %>
                 <td class="table-btn btn-"><%= link_to 'Edit', edit_bar_path(bar), class: 'btn btn-default' %></td>
                 <td class="table-btn"><%= link_to 'Destroy', bar, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default' %></td>
+              <% else %>
+                <td></td>
+                <td></td>
               <% end %>
             </tr>
           <% end %>
