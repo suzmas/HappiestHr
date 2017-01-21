@@ -1,7 +1,8 @@
+
 .navbar {
   border: none;
   background: rgba(255,255,255, 0.3);
-  // background: transparent;
+  font-family: 'Raleway', sans-serif !important;
 }
 .navbar-brand {
   background: rgba(255,255,255, 0.3);
@@ -11,8 +12,10 @@
 .navbar input {
   float: right;
 }
-
+#search-form {
+  float: right;
+}
 a {
+  font-family: 'Raleway', sans-serif;
   color: white !important;
-  font-family: 'Open Sans', sans-serif;
 }

@@ -18,10 +18,7 @@
         <thead>
           <tr>
             <th>Name</th>
-            <th>Street</th>
-            <th>City</th>
-            <th>State</th>
-            <th>Zip</th>
+            <th>Location</th>
             <th colspan="3"></th>
           </tr>
         </thead>
@@ -29,21 +26,18 @@
         <tbody>
           <% @bars.each do |bar| %>
             <tr>
-              <td><%= bar.name %></td>
-              <td><%= bar.street %></td>
-              <td><%= bar.city %></td>
-              <td><%= bar.state %></td>
-              <td><%= bar.zip %></td>
+              <td><%= link_to bar.name, bar, class: 'bar-link' %></td>
+              <td><%= "#{bar.street}, #{bar.city} #{bar.zip}" %></td>
 
               <td class="table-btn"><%= link_to 'View', bar, class: 'btn btn-default' %></td>
 
-              <% if bar.user == current_user %>
+              <!-- <% if bar.user == current_user %>
                 <td class="table-btn btn-"><%= link_to 'Edit', edit_bar_path(bar), class: 'btn btn-default' %></td>
                 <td class="table-btn"><%= link_to 'Destroy', bar, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default' %></td>
               <% else %>
                 <td></td>
                 <td></td>
-              <% end %>
+              <% end %> -->
             </tr>
           <% end %>
         </tbody>
