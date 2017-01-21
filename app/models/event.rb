@@ -8,9 +8,9 @@ class Event < ApplicationRecord
   end
 
 
-  def sorted
+  def self.sorted
     Event.all.sort {|event| event.day_of_week }
   end
 
-  
+
 end

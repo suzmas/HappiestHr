@@ -15,7 +15,7 @@
   </thead>
 
   <tbody>
-    <% @events.each do |event| %>
+    <% @events.sorted.each do |event| %>
       <tr>
         <td><%= event.name %></td>
         <td><%= event.day %></td>
@@ -29,7 +29,6 @@
     <% end %>
   </tbody>
 </table>
-
 <br>
 
 <%= link_to 'New Event', new_event_path %>
