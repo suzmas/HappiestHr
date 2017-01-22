@@ -1,34 +1,49 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Events</h1>
+<div class="container bg-overlay">
+  <div class="row text-center">
+    <h1 class="text-center">five after five</h1>
+    <h4>Happy Hours. <br> Go there, eat stuff, drink things. Repeat.</h4>
+    <div class="container anim-search">
+      <%= render partial: 'layouts/search' %>
+    </div>
+  </div>
+</div>
+<div class="center-block text-center">
+  <a href="#listings"><span class="glyphicon glyphicon-chevron-down" id="down-arrow"></span></a>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Day</th>
-      <th>Start</th>
-      <th>End</th>
-      <th>Bar</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="container listings" id="listings">
+  <div class="row">
+    <div class="col-md-12">
 
-  <tbody>
-    <% @events.sorted.each do |event| %>
-      <tr>
-        <td><%= event.name %></td>
-        <td><%= event.day %></td>
-        <td><%= event.start %></td>
-        <td><%= event.end %></td>
-        <td><%= event.bar %></td>
-        <td><%= link_to 'Show', event %></td>
-        <!-- <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <table class="table table-responsive">
+        <caption>Coming up...</caption>
+
+
+        <tbody>
+          <% @events.sorted.each do |event| %>
+            <tr>
+              <td><%= link_to event.bar.name, event.bar, class: 'bar-link' %></td>
+              <td><%= event.day %></td>
+              <td><%= "#{@events.hourstring(event.start)} to #{@events.hourstring(event.end)}" %></td>
+              <td><%= "#{event.bar.street} #{event.bar.zip}" %></td>
+
+              <td class="table-btn"><%= link_to 'Show', event, class: 'btn btn-default' %></td>
+
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <div class="center-block text-center">
+        <%= link_to 'New Event', new_event_path, class: 'btn btn-primary' %>
+      </div>
+    </div>
+  </div>
+</div>
+
 <br>
 
-<%= link_to 'New Event', new_event_path %>
+<div class="container">
+  <div class="center-block map" id="bars_map" data-bars-id="<%=@bars%>">
+  </div>
+</div>

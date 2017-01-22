@@ -1,15 +1,22 @@
 class Event < ApplicationRecord
   belongs_to :bar
 
+  def self.hourstring(time)
+    time.strftime("%l")
+  end
+
+
   def day_of_week
-    days = { "Monday" => 0, "Tuesday" => 1, "Wednesday" => 2, "Thursday" => 3, "Friday" => 4, "Saturday" => 5, "Sunday" => 6 }
+    days = { "Monday" => 1, "Tuesday" => 2, "Wednesday" => 3, "Thursday" => 4, "Friday" => 5, "Saturday" => 6, "Sunday" => 7 }
 
     days[day]
   end
 
 
   def self.sorted
-    Event.all.sort {|event| event.day_of_week }
+    e = Event.all.sort {|event| event.day_of_week }
+    f = e.select {|event| event.day_of_week >= (Time.now.strftime("%w").to_i) }
+    (e-f).each {|i| f << i}
   end
 
 

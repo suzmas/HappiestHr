@@ -20,18 +20,14 @@
     font-family: 'Raleway', sans-serif;
   }
 }
-.text-center {
-  a {
-  color: black !important;
-  }
-}
 #down-arrow {
   padding: 1em;
   font-size: 2em;
 }
 .listings {
-  padding-top: 10em;
-  min-width: 60%;
+  padding-top: 2em;
+  min-width: 40%;
+  max-width: 80%
 }
 table {
   box-shadow: 1px 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
