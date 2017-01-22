@@ -12,5 +12,5 @@ Rails.application.routes.draw do
     get :map_locations, on: :collection
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'bars#index'
+  root 'events#index'
 end
