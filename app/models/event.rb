@@ -17,6 +17,7 @@ class Event < ApplicationRecord
     e = Event.all.sort {|event| event.day_of_week }
     f = e.select {|event| event.day_of_week >= (Time.now.strftime("%w").to_i) }
     (e-f).each {|i| f << i}
+    f
   end
 
 
