@@ -1,5 +1,7 @@
 class Event < ApplicationRecord
   belongs_to :bar
+  include PgSearch
+  multisearchable :against => [:name, :day, :start, :end, :bar]
   after_initialize do
     self[:day_int] = day_of_week(self.day)
   end

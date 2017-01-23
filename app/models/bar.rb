@@ -1,6 +1,8 @@
 class Bar < ApplicationRecord
   belongs_to :user
   has_many :events
+  # include PgSearch
+  # multisearchable :against => [:name, :street, :city, :zip]
   resourcify
 
   geocoded_by :address

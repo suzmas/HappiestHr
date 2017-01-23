@@ -40,7 +40,7 @@ gem 'geocoder'
 gem 'gmaps4rails'
 gem 'paperclip'
 gem 'textacular'
-
+gem 'pg_search'
 # Authorization and Auth gems w/ Devise, Cancan, rolify, Omniauth
 gem 'devise'
 gem 'omniauth-twitter'

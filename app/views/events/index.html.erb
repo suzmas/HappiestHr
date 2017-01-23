@@ -21,16 +21,23 @@
 
 
         <tbody>
-          <% @events.sorted.each do |event| %>
+          <% if @results.length == 0 %>
+            <% @events.sorted.each do |event| %>
+              <tr>
+                <td><%= link_to event.bar.name, event.bar, class: 'bar-link' %></td>
+                <td><%= event.day %></td>
+                <td><%= "#{@events.hourstring(event.start)} to #{@events.hourstring(event.end)}" %></td>
+                <td><%= "#{event.bar.street} #{event.bar.zip}" %></td>
+
+                <td class="table-btn"><%= link_to 'Show', event, class: 'btn btn-default' %></td>
+              </tr>
+              <% end %>
+            <% else %>
+            <% @results.each do |result| %>
             <tr>
-              <td><%= link_to event.bar.name, event.bar, class: 'bar-link' %></td>
-              <td><%= event.day %></td>
-              <td><%= "#{@events.hourstring(event.start)} to #{@events.hourstring(event.end)}" %></td>
-              <td><%= "#{event.bar.street} #{event.bar.zip}" %></td>
-
-              <td class="table-btn"><%= link_to 'Show', event, class: 'btn btn-default' %></td>
-
+              <td><%= result.content %></td>
             </tr>
+            <% end %>
           <% end %>
         </tbody>
       </table>
