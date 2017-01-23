@@ -15,6 +15,9 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     @event = Event.new
+    @bars_for_select = Bar.all.map do |bar|
+      [bar.name, bar.id]
+    end
   end
 
   # GET /events/1/edit
