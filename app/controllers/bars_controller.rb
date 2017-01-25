@@ -10,6 +10,7 @@ class BarsController < ApplicationController
     @bars = Bar.all
     if params[:search]
       @bars = Bar.search(params[:search])
+
     end
   end
 

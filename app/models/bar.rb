@@ -1,4 +1,5 @@
 class Bar < ApplicationRecord
+  validates :name, uniqueness: true
   belongs_to :user
   has_many :events
   # include PgSearch

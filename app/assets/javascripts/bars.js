@@ -3,6 +3,12 @@
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 
 
+function scrollListings() {
+  var viewResults = $('#listings').offset(),
+    destination = viewResults.top;
+  $(document).scrollTop(destination);
+}
+
 function placeMakers(dataFromServer, markers) {
   markers = handler.addMarkers(dataFromServer);
   handler.bounds.extendWith(markers);
@@ -86,9 +92,6 @@ function loadAndCreateGmaps() {
       method: 'GET',
       success: function(dataFromServer) {
         createGmaps(dataFromServer);
-        var viewResults = $('#listings').offset(),
-          destination = viewResults.top;
-        $(document).scrollTop(destination);
       },
       error: function(jqXHR, textStatus, errorThrown) {
         alert("Getting map data failed: " + errorThrown);
