@@ -23,6 +23,9 @@ class EventsController < ApplicationController
 
   # GET /events/1/edit
   def edit
+    @bars_for_select = Bar.all.map do |bar|
+      [bar.name, bar.id]
+    end
   end
 
   # POST /events
