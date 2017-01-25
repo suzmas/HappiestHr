@@ -26,7 +26,6 @@ function showLocations(dataFromServer) {
 }
 
 function createGmap(dataFromServer) {
-  alert(dataFromServer);
   handler = Gmaps.build('Google');
   handler.buildMap({
     provider: {},
@@ -86,7 +85,10 @@ function loadAndCreateGmaps() {
       url: myurl,
       method: 'GET',
       success: function(dataFromServer) {
-        createGmaps(dataFromServer)
+        createGmaps(dataFromServer);
+        var viewResults = $('#listings').offset(),
+          destination = viewResults.top;
+        $(document).scrollTop(destination);
       },
       error: function(jqXHR, textStatus, errorThrown) {
         alert("Getting map data failed: " + errorThrown);

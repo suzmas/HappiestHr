@@ -21,6 +21,7 @@
           <tr>
             <th>Name</th>
             <th>Location</th>
+            <th>Next HH</th>
             <th colspan="3"></th>
           </tr>
         </thead>
@@ -30,6 +31,14 @@
             <tr>
               <td><%= link_to bar.name, bar, class: 'bar-link' %></td>
               <td><%= "#{bar.street}, #{bar.city} #{bar.zip}" %></td>
+
+              <% if bar.events.length > 0 %>
+                <% next_hh = bar.events.sorted.first %>
+                <td><%= "#{next_hh.day}- #{next_hh.start.strftime("%l")} to #{next_hh.end.strftime("%l")}" %></td>
+              <% else %>
+                <td>No upcoming happy hours</td>
+              <% end %>
+
 
               <td class="table-btn"><%= link_to 'View', bar, class: 'btn btn-default' %></td>
 
