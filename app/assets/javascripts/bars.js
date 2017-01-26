@@ -10,6 +10,7 @@ function scrollListings() {
 }
 
 function placeMakers(dataFromServer, markers) {
+  console.log(dataFromServer);
   markers = handler.addMarkers(dataFromServer);
   handler.bounds.extendWith(markers);
   handler.fitMapToBounds();
