@@ -4,9 +4,12 @@
 
 
 function scrollListings() {
-  var viewResults = $('#listings').offset(),
-    destination = viewResults.top;
-  $(document).scrollTop(destination);
+  var urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.has('search')) {
+    var viewResults = $('#listings').offset(),
+      destination = viewResults.top;
+    $(document).scrollTop(destination);
+  }
 }
 
 function placeMakers(dataFromServer, markers) {
@@ -105,3 +108,4 @@ $(document).on('ready', loadAndCreateGmap);
 $(document).on('turbolinks:load', loadAndCreateGmap);
 $(document).on('ready', loadAndCreateGmaps);
 $(document).on('turbolinks:load', loadAndCreateGmaps);
+$(document).on('ready', scrollListings);

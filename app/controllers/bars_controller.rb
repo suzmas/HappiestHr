@@ -10,15 +10,12 @@ class BarsController < ApplicationController
     @bars = Bar.all
     if params[:search]
       @bars = Bar.search(params[:search])
-
     end
   end
 
   # GET /bars/1
   # GET /bars/1.json
   def show
-    g = https://maps.googleapis.com/maps/api/geocode/json?latlng=40.714224,-73.961452&key=YOUR_API_KEY
-
   end
 
   def map_location
